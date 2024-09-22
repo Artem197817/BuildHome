@@ -1,0 +1,29 @@
+{
+  "name": "buildhome",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "bootstrap": "^5.3.3",
+    "gulp-less": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "jquery": "^3.7.1",
+    "jquery-mask-plugin": "^1.14.16",
+    "wow.js": "^1.2.2"
+  },
+  "devDependencies": {
+    "grunt": "^1.6.1",
+    "grunt-contrib-less": "^3.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "gulp": "^5.0.0",
+    "gulp-autoprefixer": "^9.0.0",
+    "gulp-clean-css": "^4.3.0"
+  }
+}
