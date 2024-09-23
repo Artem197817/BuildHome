@@ -1,0 +1,292 @@
+@title-color: #ecc66b;
+@text-color: white;
+@background-main-color: #25252d;
+@background-main-gradient: rgba(37, 37, 45, 0);
+@bakground-small-block-color: #313139;
+@icon-color: #ecc66b;
+@background-icon-color: #555555;
+@step-digital-icon-color: #393943;
+@button-gradient1: #fcc271;
+@button-gradient2: #efdbbb;
+@header-border-color: #363D51;
+
+.flex-center-center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-center-between() {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@font-face {
+  font-family: Museo Sans Cyrl;
+  src: url(../../fonts/MuseoSansCyrl300.ttf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Museo Sans Cyrl;
+  src: url(../../fonts/MuseoSansCyrl100.ttf);
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: Museo Sans Cyrl;
+  src: url(../../fonts/MuseoSansCyrl500.ttf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Museo Sans Cyrl;
+  src: url(../../fonts/MuseoSansCyrl700.ttf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Neumann;
+  src: url(../../fonts/neumann.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Museo Sans Cyrl', sans-serif;
+  font-weight: 300;
+  color: @text-color;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.button {
+  text-decoration: none;
+  border-radius: 30px;
+  .flex-center-center;
+  height: 60px;
+  font-size: 18px;
+  font-family: 'Museo Sans Cyrl', sans-serif;
+  font-weight: 700;
+  color: @background-main-color;
+  text-align: center;
+  cursor: pointer;
+  background-image: linear-gradient(90deg, @button-gradient1 0%, @button-gradient2 100%);
+  border: none;
+  box-sizing: border-box;
+
+  &.transparent {
+    background-color: transparent;
+    border: 1px solid @text-color;
+    color: @text-color;
+    background-image: none;
+    box-sizing: border-box;
+  }
+}
+
+.phone-block {
+  .phone {
+    font-size: 18px;
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-weight: 700;
+    color: @text-color;
+    line-height: 0.833;
+    margin-bottom: 14px;
+
+  }
+
+  .order-call {
+    .flex-center-center();
+    text-decoration: none;
+
+    .order-call-text {
+      color: @title-color;
+      font-size: 16px;
+      font-family: 'Museo Sans Cyrl', sans-serif;
+      line-height: 0.938;
+      margin-left: 8px;
+      padding-bottom: 5px;
+      padding-top: 5px;
+      border-bottom: 1px solid transparent;
+    }
+
+    &:hover .order-call-text {
+      border-bottom: 1px solid @title-color;
+    }
+  }
+}
+
+
+.title {
+  background-image: url(../../images/bacground-title.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+
+  .title-bottom-shadow {
+    background-image: -moz-linear-gradient(90deg, @background-main-color 0%, @background-main-gradient 100%);
+    background-image: -webkit-linear-gradient(90deg, @background-main-color 0%, @background-main-gradient 100%);
+    background-image: -ms-linear-gradient(90deg, @background-main-color 0%, @background-main-gradient 100%);
+    height: 215px;
+  }
+
+
+  header {
+    border-bottom: 1px solid @header-border-color;
+
+    .container {
+      padding: 20px 0 21px 0;
+      .flex-center-between();
+
+    }
+  }
+
+  .container {
+    &.title-container {
+      position: relative;
+      .flex-center-center();
+
+      .title-block {
+        .flex-center-center();
+        flex-direction: column;
+
+        .title-title {
+          margin-top: 162px;
+          font-size: 50px;
+          font-family: "Neumann", sans-serif;
+          color: @title-color;
+          line-height: 1.2;
+          text-align: center;
+          max-width: 624px;
+          margin-bottom: 25px;
+        }
+
+        .title-text {
+          font-size: 18px;
+          font-family: 'Museo Sans Cyrl', sans-serif;
+          color: @text-color;
+          font-weight: 700;
+          text-align: center;
+          margin-bottom: 40px;
+        }
+
+        .button-title {
+          padding-left: 70px;
+          padding-right: 70px;
+          margin-bottom: 68px;
+        }
+
+      }
+
+      .social {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        right: 0;
+        top: 203px;
+
+        .instagram {
+          margin-bottom: 30px;
+        }
+
+        .telegram {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}
+
+.projects {
+  background-color: @background-main-color;
+
+  .container {
+    padding: 100px 0;
+
+    .projects-title {
+      margin-bottom: 72px;
+      font-size: 40px;
+      font-family: "Neumann", sans-serif;
+      color: @title-color;
+      text-align: center;
+    }
+
+    .project-block {
+      .flex-center-between();
+      margin-bottom: 113px;
+
+      .project-image {
+        width: 100%;
+
+        &.order {
+          order: 1;
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
+
+      .project-info {
+        max-width: 498px;
+
+        .project-info-title {
+          font-size: 30px;
+          color: @text-color;
+          font-family: 'Museo Sans Cyrl', sans-serif;
+          font-weight: 500;
+          margin-bottom: 40px;
+        }
+
+        .project-info-text {
+          font-size: 18px;
+          color: @text-color;
+          line-height: 1.278;
+          margin-bottom: 50px;
+
+        }
+
+        .project-info-details {
+          .flex-center-between();
+
+          .project-info-detail {
+            .flex-center-center();
+            border-width: 1px;
+            border-color: @title-color;
+            border-style: solid;
+            border-radius: 50%;
+            width: 108px;
+            height: 108px;
+            box-sizing: border-box;
+            margin-bottom: 50px;
+
+            span {
+              line-height: 1.25;
+              font-size: 20px;
+              color: @title-color;
+              font-family: 'Museo Sans Cyrl', sans-serif;
+              font-weight: 500;
+              width: 90px;
+              text-align: center;
+            }
+          }
+        }
+
+        .button-project-info {
+          width: 365px;
+
+          &.transparent {
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
