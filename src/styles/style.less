@@ -9,6 +9,7 @@
 @button-gradient1: #fcc271;
 @button-gradient2: #efdbbb;
 @header-border-color: #363D51;
+@project-link-color: #89898a;
 
 .flex-center-center() {
   display: flex;
@@ -20,6 +21,20 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.title-css() {
+  text-align: center;
+  font-size: 40px;
+  color: @title-color;
+  font-family: "Neumann", sans-serif;
+}
+
+.small-block-css() {
+  color: @text-color;
+  font-family: "Museo Sans Cyrl", sans-serif;
+  font-size: 18px;
+  line-height: 23px;
 }
 
 @font-face {
@@ -212,16 +227,14 @@ body {
     padding: 100px 0;
 
     .projects-title {
-      margin-bottom: 72px;
-      font-size: 40px;
-      font-family: "Neumann", sans-serif;
-      color: @title-color;
-      text-align: center;
+      margin-bottom: 32px;
+      .title-css();
     }
 
     .project-block {
       .flex-center-between();
-      margin-bottom: 113px;
+      margin-bottom: 70px;
+      padding-top: 50px;
 
       .project-image {
         width: 100%;
@@ -287,6 +300,454 @@ body {
         }
       }
     }
+
+    .project-link-block {
+      .flex-center-center();
+      text-decoration: none;
+
+      .project-link {
+        opacity: 0.988;
+        font-size: 18px;
+        color: @project-link-color;
+        font-family: "Museo Sans Cyrl", sans-serif;
+        margin-right: 10px;
+
+      }
+    }
   }
 }
 
+.technology {
+  background-color: @background-main-color;
+
+  .container {
+    padding-top: 20px;
+    padding-bottom: 200px;
+
+    .technology-title {
+      .title-css();
+      margin-bottom: 80px;
+    }
+
+    .technology-image-block {
+      .flex-center-center();
+      position: relative;
+
+      .tehnology-image {
+
+      }
+
+      .technology-image-indicator {
+        position: absolute;
+        top: 76px;
+        left: calc(50% - 370px);
+      }
+
+      .technology-info {
+        .technology-info-title {
+          font-size: 18px;
+          color: @text-color;
+          font-weight: 500;
+          font-family: "Museo Sans Cyrl", sans-serif;
+        }
+
+        .technology-info-text {
+          font-size: 16px;
+          line-height: 21px;
+          color: @text-color;
+          font-weight: 100;
+          font-family: "Museo Sans Cyrl", sans-serif;
+        }
+
+        &.block1 {
+          position: absolute;
+          max-width: 268px;
+          top: 93px;
+          left: 0;
+        }
+
+        &.block2 {
+          position: absolute;
+          max-width: 269px;
+          top: 120px;
+          left: 953px;
+        }
+
+        &.block3 {
+          position: absolute;
+          max-width: 238px;
+          top: 322px;
+          left: 922px;
+
+        }
+
+        &.block4 {
+          position: absolute;
+          max-width: 229px;
+          top: 492px;
+          left: 630px;
+        }
+
+        &.block5 {
+          position: absolute;
+          max-width: 238px;
+          top: 340px;
+          left: 50px;
+        }
+      }
+    }
+  }
+}
+
+.step {
+  background-color: @background-main-color;
+
+  .container {
+    padding-bottom: 60px;
+
+    .step-title {
+      .title-css();
+      margin-bottom: 80px;
+    }
+
+    .steps-row {
+      .flex-center-between();
+      flex-wrap: wrap;
+
+      .step-info {
+        display: flex;
+        align-items: flex-start;
+        width: 354px;
+
+        .step-info-icon {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          top: -15px;
+
+          .step-info-number {
+            font-size: 70px;
+            font-family: "Neumann", sans-serif;
+            color: @step-digital-icon-color;
+          }
+
+          .step-info-icon-img {
+            position: relative;
+            top: -35px;
+          }
+
+        }
+
+        .step-info-text-block {
+          margin-top: 48px;
+          margin-bottom: 101px;
+
+          .step-info-title {
+            .small-block-css();
+            font-weight: 500;
+          }
+
+          .step-info-text {
+            .small-block-css();
+            font-weight: 100;
+
+            a {
+              color: @text-color;
+              font-weight: 500;
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.gallery {
+  background-color: @background-main-color;
+
+  .container {
+    padding-top: 19px;
+    padding-bottom: 60px;
+
+    .gallery-title {
+      .title-css();
+      margin-bottom: 80px;
+    }
+
+  }
+}
+
+.guarantees {
+  background-color: @background-main-color;
+
+  .container {
+    padding: 60px 0;
+
+    .guarantees-title {
+      .title-css();
+      margin-bottom: 80px;
+    }
+
+    .guarantees-upper-blocks {
+      .flex-center-between();
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+
+      .guarantees-upper-block {
+        padding-top: 29px;
+        padding-bottom: 39px;
+        padding-left: 40px;
+        width: 588px;
+        background-color: @bakground-small-block-color;
+        display: flex;
+        align-items: center;
+
+        .guarantees-upper-block-info {
+          .guarantees-upper-block-title {
+            .small-block-css();
+            font-weight: 500;
+          }
+
+          .guarantees-upper-block-text {
+            .small-block-css();
+            font-weight: 100;
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      .guarantees-upper-block-icon {
+        margin-right: 40px;
+      }
+    }
+
+    .guarantees-items {
+      .flex-center-between();
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+
+      .guarantees-item {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        max-width: 282px;
+
+        .guarantees-item-icon {
+          .flex-center-center();
+          border: 1px solid @title-color;
+          border-radius: 50%;
+          width: 140px;
+          height: 140px;
+          box-sizing: border-box;
+          margin-bottom: 30px;
+          //background-color: @background-icon-color;
+        }
+
+        .guarantees-item-title {
+          .small-block-css();
+          text-align: center;
+          margin-bottom: 15px;
+        }
+
+        .guarantees-item-text {
+          .small-block-css();
+          text-align: center;
+        }
+      }
+    }
+
+    .guarantees-button-block {
+      display: flex;
+      justify-content: center;
+
+      .button-guarantees {
+        width: 385px;
+      }
+    }
+  }
+}
+
+.consultation {
+  background-color: @background-main-color;
+
+  .container {
+    padding: 60px 0;
+    .flex-center-between();
+    flex-wrap: wrap;
+
+    .consultation-order {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+
+      max-width: 512px;
+
+      .consultation-order-title {
+        .title-css();
+        margin-bottom: 40px;
+        line-height: 54px;
+      }
+
+      .consultation-order-form {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .consultation-order-input {
+          .form-control {
+            width: 409px;
+            height: 60px;
+            border-radius: 29px;
+            background-color: transparent;
+            border: 1px solid @text-color;
+            box-sizing: border-box;
+            appearance: none;
+            outline: none;
+            margin-bottom: 20px;
+
+            &::placeholder {
+              .small-block-css();
+              background-color: transparent;
+            }
+
+          }
+
+          .invalid-feedback {
+            margin-left: 10px;
+          }
+        }
+
+        .button-consultation-order {
+          width: 409px;
+          margin-bottom: 30px;
+
+        }
+
+        .consultation-order-check {
+          display: flex;
+
+          .form-check-input {
+            border-radius: 0;
+            border-color: @text-color;
+            background-color: @background-main-color;
+            margin-right: 25px;
+
+            &:focus {
+              box-shadow: none;
+              transform: scale(1.05);
+            }
+
+            &:checked {
+              background-color: transparent;
+              border-color: @text-color;
+            }
+          }
+
+          .form-check-label {
+            max-width: 313px;
+            font-size: 14px;
+            line-height: 16px;
+            color: @text-color;
+            font-family: "Museo Sans Cyrl", sans-serif;
+
+            .politics-link {
+              color: @text-color;
+              font-family: "Museo Sans Cyrl", sans-serif;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.tour {
+  background-color: @background-main-color;
+  position: relative;
+  z-index: -2;
+
+  .container {
+    padding: 60px 0 160px 0;
+    position: relative;
+    .flex-center-center();
+
+    .tour-img-map {
+      position: absolute;
+      z-index: -1;
+      top: 22px;
+      left: -35px;
+    }
+
+    .tour-info {
+      max-width: 442px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .tour-info-title {
+        font-size: 60px;
+        line-height: 70px;
+        color: @title-color;
+        font-family: "Neumann", sans-serif;
+        text-align: center;
+        margin-top: 215px;
+        margin-bottom: 30px;
+      }
+
+      .tour-info-text {
+        .small-block-css();
+        text-align: center;
+        font-weight: 500;
+        margin-bottom: 30px;
+      }
+
+      .button-tour {
+        width: 309px;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: @background-main-color;
+
+  .container {
+    .flex-center-between();
+    padding: 50px 0 150px 0;
+
+    .footer-adress-block {
+      display: flex;
+      flex-direction: column;
+      .small-block-css();
+
+      .footer-adress {
+        margin-bottom: 30px;
+      }
+    }
+
+    .footer-logo-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .social {
+        margin-top: 54px;
+        width: 160px;
+        .flex-center-between();
+
+      }
+    }
+
+    .phone-block {
+      .order-call-text {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+
+  
