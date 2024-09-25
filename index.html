@@ -5,6 +5,7 @@
     <title>Строительство домов</title>
     <link rel="stylesheet" href="node_modules/animate.css/animate.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+   <!-- <link rel="stylesheet" href="node_modules/swiper/swiper.min.css">-->
     <link rel="stylesheet" href="dist/styles/style.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,7 @@
 <body>
 <section class="title">
     <header>
-        <div class="container">
+        <div class="container-main">
             <a href="#" class="menu" id="menu">
                 <img src="images/menu.png" alt="menu">
             </a>
@@ -31,7 +32,7 @@
             </div>
         </div>
     </header>
-    <div class="container title-container">
+    <div class="container-main title-container">
         <div class="title-block">
             <h1 class="title-title">Строительство домов
                 и коттеджей под ключ</h1>
@@ -53,7 +54,7 @@
     <div class="title-bottom-shadow"></div>
 </section>
 <section class="projects">
-    <div class="container">
+    <div class="container-main">
         <h2 class="projects-title">Наши проекты</h2>
         <div class="project-block">
             <div class="project-image">
@@ -100,7 +101,7 @@
 </section>
 
 <section class="technology">
-    <div class="container">
+    <div class="container-main">
         <h2 class="technology-title">Технологии строительства</h2>
         <div class="technology-image-block">
             <img src="images/house-dots.png" alt="house" class="tehnology-image">
@@ -134,7 +135,7 @@
 </section>
 
 <section class="step">
-    <div class="container">
+    <div class="container-main">
         <h2 class="step-title">6 шагов к вашему новому дому</h2>
         <div class="steps-row">
             <div class="step-info">
@@ -208,14 +209,69 @@
 </section>
 
 <section class="gallery">
-    <div class="container">
+    <div class="container-main">
         <h2 class="gallery-title">Построили более 200 домов за 10 лет</h2>
-        <div class="gallery-slider"></div>
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <div class="slide-content">
+                    <img src="images/istockphoto-1130338518-170667a.png" alt="">
+                    <div class="slide-info">
+                        <div class="slide-info-left">Modern house 005
+                            <span>Киевская обл., г. Борова, 15</span>
+                        </div>
+                        <div class="slide-info-line"></div>
+                        <div class="slide-info-right">Габариты: 8,4 м Х 10,5 м
+                            <span>Площадь: 154 м<sup>2</sup></span>
+                        </div>
+                    </div>
+                </div>
+              </div><var></var>
+              <div class="swiper-slide">
+                <div class="slide-content">
+                    <img src="images/istockphoto-1130338518-170667a.png" alt="">
+                    <div class="slide-info">
+                        <div class="slide-info-left">Modern house 005
+                            <span>Киевская обл., г. Борова, 15</span>
+                        </div>
+                        <div class="slide-info-line"></div>
+                        <div class="slide-info-right">Габариты: 8,4 м Х 10,5 м
+                            <span>Площадь: 154 м<sup>2</sup></span>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="slide-content">
+                    <img src="images/istockphoto-1130338518-170667a.png" alt="">
+                    <div class="slide-info">
+                        <div class="slide-info-left">Modern house 005
+                            <span>Киевская обл., г. Борова, 15</span>
+                        </div>
+                        <div class="slide-info-line"></div>
+                        <div class="slide-info-right">Габариты: 8,4 м Х 10,5 м
+                            <span>Площадь: 154 м<sup>2</sup></span>
+                        </div>
+                    </div>
+                </div>
+              </div>
+        
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+          
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+          </div>
     </div>
 </section>
 
 <section class="guarantees">
-    <div class="container">
+    <div class="container-main">
         <h2 class="guarantees-title">Гарантии и условия оплаты</h2>
         <div class="guarantees-upper-blocks">
             <div class="guarantees-upper-block">
@@ -265,7 +321,7 @@
 </section>
 
 <section class="consultation">
-    <div class="container">
+    <div class="container-main">
         <div class="consultation-image">
             <img src="images/house-c.png" alt="house" class="consultation-image-img">
         </div>
@@ -297,8 +353,8 @@
 </section>
 
 <section class="tour">
-    <div class="container">
-        <img src="images/map.png" alt="map" class="tour-img-map">
+    <div class="container-main">
+        <div class="tour-map">
         <div class="tour-info">
             <h2 class="tour-info-title">Запишитесь
                 на экскурсию</h2>
@@ -306,10 +362,11 @@
             <button class="button button-tour">Записаться</button>
         </div>
     </div>
+    </div>
 </section>
 
 <footer>
-    <div class="container">
+    <div class="container-main">
         <div class="footer-adress-block">
             <span class="footer-adress">г. Киев, бульвар Кольцова, 14-Ж</span>
             <span class="footer-working-mode">Пн-Пт: 10:00 -19:00</span>
@@ -349,6 +406,7 @@
 <script src="node_modules/jquery/dist/jquery.js"></script>
 <script src="node_modules/jquery-mask-plugin/dist/jquery.mask.js"></script>
 <script src="node_modules/wow.js/dist/wow.js"></script>
-<script src="scripts/script.js"></script>
+<script src="node_modules/swiper/swiper-bundle.js"></script>
+<script  src="scripts/script.js"></script>
 </body>
 </html>

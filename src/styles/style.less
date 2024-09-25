@@ -1,3 +1,6 @@
+@import '../../node_modules/swiper/swiper-bundle.min.css';
+
+
 @title-color: #ecc66b;
 @text-color: white;
 @background-main-color: #25252d;
@@ -77,7 +80,7 @@ body {
   color: @text-color;
 }
 
-.container {
+.container-main {
   margin: 0 auto;
   max-width: 1200px;
 }
@@ -130,6 +133,7 @@ body {
       padding-bottom: 5px;
       padding-top: 5px;
       border-bottom: 1px solid transparent;
+      margin-bottom: 0;
     }
 
     &:hover .order-call-text {
@@ -156,14 +160,15 @@ body {
   header {
     border-bottom: 1px solid @header-border-color;
 
-    .container {
-      padding: 20px 0 21px 0;
+    .container-main {
+     padding-top: 20px;
+     padding-bottom: 21px;
       .flex-center-between();
 
     }
   }
 
-  .container {
+  .container-main {
     &.title-container {
       position: relative;
       .flex-center-center();
@@ -223,8 +228,9 @@ body {
 .projects {
   background-color: @background-main-color;
 
-  .container {
-    padding: 100px 0;
+  .container-main {
+   padding-top: 100px;
+   padding-bottom: 100px;
 
     .projects-title {
       margin-bottom: 32px;
@@ -320,7 +326,7 @@ body {
 .technology {
   background-color: @background-main-color;
 
-  .container {
+  .container-main {
     padding-top: 20px;
     padding-bottom: 200px;
 
@@ -402,7 +408,7 @@ body {
 .step {
   background-color: @background-main-color;
 
-  .container {
+  .container-main {
     padding-bottom: 60px;
 
     .step-title {
@@ -467,7 +473,7 @@ body {
 .gallery {
   background-color: @background-main-color;
 
-  .container {
+  .container-main {
     padding-top: 19px;
     padding-bottom: 60px;
 
@@ -475,19 +481,66 @@ body {
       .title-css();
       margin-bottom: 80px;
     }
+    .swiper{
+      width: 100%;
+      height: 400px;
+      margin: 0 auto;
+      .swiper-wrapper{
+        .swiper-slide{
+          .slide-content{
+            .slide-info{
+              max-width: 588px;
+              padding: 15px;
+              .flex-center-between();
+              background-color: @bakground-small-block-color;
+              .slide-info-left{
+                display: flex;
+                flex-direction: column;
+                  .small-block-css();
+                
+                  margin-left: 42px;
+                span{
+                  margin-top: 15px;
+                  font-size: 16px;
+                }
+              }
 
+                .slide-info-line{
+                  height: 45px;
+                  border-left: 1px solid @text-color;
+                }
+
+                .slide-info-right{
+                  display: flex;
+                  flex-direction: column;
+                    color: @text-color;
+                    font-size: 16px;
+            
+                    margin-right: 25px;
+                  span{
+                    margin-top: 15px;
+                    } 
+                   }
+              }
+            
+            }
+          }
+        }
+      }
+    }
   }
-}
+
 
 .guarantees {
   background-color: @background-main-color;
 
-  .container {
-    padding: 60px 0;
+  .container-main {
+    padding-top: 60px;
+    padding-bottom: 60px;;
 
     .guarantees-title {
       .title-css();
-      margin-bottom: 80px;
+      margin-bottom: 50px;
     }
 
     .guarantees-upper-blocks {
@@ -503,6 +556,8 @@ body {
         background-color: @bakground-small-block-color;
         display: flex;
         align-items: center;
+        margin-top: 30px;
+
 
         .guarantees-upper-block-info {
           .guarantees-upper-block-title {
@@ -572,8 +627,9 @@ body {
 .consultation {
   background-color: @background-main-color;
 
-  .container {
-    padding: 60px 0;
+  .container-main {
+    padding-top: 60px;
+    padding-bottom: 60px;
     .flex-center-between();
     flex-wrap: wrap;
 
@@ -669,17 +725,24 @@ body {
   position: relative;
   z-index: -2;
 
-  .container {
-    padding: 60px 0 160px 0;
+  .container-main {
+    padding-top: 60px;
+    padding-bottom: 160px;
     position: relative;
     .flex-center-center();
 
-    .tour-img-map {
-      position: absolute;
-      z-index: -1;
-      top: 22px;
-      left: -35px;
-    }
+
+    .tour-map{
+      background-image: url('../../images/map.png') ;
+      background-position: center;
+      background-size: cover;
+      max-width: 1200px;
+      margin: auto auto;
+      padding-left: 367px;
+      padding-right: 295px;
+    
+
+  
 
     .tour-info {
       max-width: 442px;
@@ -708,15 +771,17 @@ body {
         width: 309px;
       }
     }
-  }
+  }}
 }
 
 footer {
   background-color: @background-main-color;
+  border-top: 1px solid @header-border-color;
 
-  .container {
+  .container-main {
     .flex-center-between();
-    padding: 50px 0 150px 0;
+    padding-top: 50px;
+    padding-bottom: 150px;
 
     .footer-adress-block {
       display: flex;
@@ -741,13 +806,9 @@ footer {
       }
     }
 
-    .phone-block {
-      .order-call-text {
-        margin-bottom: 0;
-      }
-    }
   }
 }
 
+@import 'adaptive.less';
 
   

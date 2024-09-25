@@ -2,6 +2,7 @@
   "name": "buildhome",
   "version": "1.0.0",
   "main": "gulpfile.js",
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,6 +17,7 @@
     "gulp-sass": "^5.1.0",
     "jquery": "^3.7.1",
     "jquery-mask-plugin": "^1.14.16",
+    "swiper": "^11.1.14",
     "wow.js": "^1.2.2"
   },
   "devDependencies": {
