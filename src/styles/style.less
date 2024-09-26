@@ -14,6 +14,10 @@
 @header-border-color: #363D51;
 @project-link-color: #89898a;
 
+:root {
+  --swiper-theme-color: @title-color; /* New color */
+}
+
 .flex-center-center() {
   display: flex;
   align-items: center;
@@ -244,6 +248,17 @@ body {
 
       .project-image {
         width: 100%;
+        .project-info-title {
+          font-size: 30px;
+          color: @text-color;
+          font-family: 'Museo Sans Cyrl', sans-serif;
+          font-weight: 500;
+          &.image{
+            text-align: center;
+            margin-bottom: 20px;
+            display: none;
+          }
+        }
 
         &.order {
           order: 1;
@@ -261,6 +276,11 @@ body {
           font-family: 'Museo Sans Cyrl', sans-serif;
           font-weight: 500;
           margin-bottom: 40px;
+          &.image{
+            text-align: center;
+            margin-bottom: 20px;
+            display: none;
+          }
         }
 
         .project-info-text {
@@ -483,15 +503,75 @@ body {
     }
     .swiper{
       width: 100%;
-      height: 400px;
+      height: 585px;
       margin: 0 auto;
+      .flex-center-center();
+
+      .swiper-pagination-bullet{
+       opacity: 1;
+        border: 1px solid @title-color;
+      }
+      .swiper-button-next, .swiper-button-prev{
+        border: 1px solid @title-color;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+      .swiper-button-next::after, .swiper-button-prev::after {
+        font-size: 14px;
+      }
+
       .swiper-wrapper{
         .swiper-slide{
+          .flex-center-center();
+          &.swiper-slide-active{
+            position: relative;
+            z-index: 10;
+            img{
+              display: block;
+            }
+            .slide-content{
+              .slide-info{
+                display: flex;
+              }
+            }
+            }
+            &.swiper-slide-prev{
+              position: relative;
+              transform: scale(0.8);
+              left: 10%;
+              opacity: 0.5;
+              img{
+                display: block;
+              }
+              .slide-content{
+                .slide-info{
+                  display: none;
+                }
+              }
+            }
+                &.swiper-slide-next{
+      right: 10%;
+      transform: scale(0.8);
+      position: relative;
+      z-index: 5;
+      opacity: 0.5;
+      img{
+        display: block;
+      }
+    }
+    img {
+      display: none
+    }
+       
           .slide-content{
+            
             .slide-info{
+              display: none;
               max-width: 588px;
               padding: 15px;
-              .flex-center-between();
+              align-items: center;
+              justify-content: space-between;
               background-color: @bakground-small-block-color;
               .slide-info-left{
                 display: flex;
@@ -529,7 +609,6 @@ body {
       }
     }
   }
-
 
 .guarantees {
   background-color: @background-main-color;
@@ -643,7 +722,7 @@ body {
 
       .consultation-order-title {
         .title-css();
-        margin-bottom: 40px;
+        margin-bottom: 20px;
         line-height: 54px;
       }
 
@@ -662,7 +741,9 @@ body {
             box-sizing: border-box;
             appearance: none;
             outline: none;
-            margin-bottom: 20px;
+            margin-top: 20px;
+            .small-block-css();
+           
 
             &::placeholder {
               .small-block-css();
@@ -678,6 +759,7 @@ body {
 
         .button-consultation-order {
           width: 409px;
+          margin-top: 20px;
           margin-bottom: 30px;
 
         }
@@ -690,7 +772,7 @@ body {
             border-color: @text-color;
             background-color: @background-main-color;
             margin-right: 25px;
-
+    
             &:focus {
               box-shadow: none;
               transform: scale(1.05);
@@ -708,7 +790,7 @@ body {
             line-height: 16px;
             color: @text-color;
             font-family: "Museo Sans Cyrl", sans-serif;
-
+            order: 1;
             .politics-link {
               color: @text-color;
               font-family: "Museo Sans Cyrl", sans-serif;
@@ -740,6 +822,7 @@ body {
       margin: auto auto;
       padding-left: 367px;
       padding-right: 295px;
+      overflow: hidden;
     
 
   
