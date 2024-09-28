@@ -94,6 +94,7 @@
 
         .guarantees-upper-block {
           width: 488px;
+          
 
 
           .guarantees-upper-block-info {
@@ -102,7 +103,7 @@
             }
 
             .guarantees-upper-block-text {
-
+                padding-right: 40px;
             }
           }
         }
@@ -435,17 +436,48 @@
         margin-bottom: 40px;
 
         .consultation-image-img {
-          width: 100%;
+         
+        }
+      }
+    }
+  }
+
+
+.tour {
+
+
+  .container-main {
+
+
+    .tour-map {
+      padding-right: 150px;
+      padding-left: 150px;
+
+
+      .tour-info {
+      
+
+        .tour-info-title {
+
+        }
+
+        .tour-info-text {
+         width: 300px;
+        }
+
+        .button-tour {
+
         }
       }
     }
   }
 }
+}
 
 @media screen and (max-width: 767px) {
   .title {
-    background-size: auto;
-    background-position: 60%;
+
+    background-position: 60% 0%;
 
     .container-main {
       &.title-container {
@@ -458,17 +490,17 @@
 
   .projects {
     .container-main {
-
+      padding: 80px 15px 45px 15px;
       .project-block {
         .project-image {
           .project-image-img {
-            width: 400px;
+            width: 100%;
           }
         }
 
         .project-info {
           .project-info-details {
-            width: 400px;
+            width: 380px;
           }
         }
       }
@@ -477,10 +509,7 @@
 
   .technology {
     .container-main {
-      .technology-title {
-
-      }
-
+      padding: 45px 15px 200px 15px;
       .technology-image-block {
 
         flex-direction: column;
@@ -520,6 +549,468 @@
       }
     }
   }
+
+  .tour {
+
+
+    .container-main {
+       padding-top: 0;
+  
+      .tour-map {
+        padding-right: 150px;
+        padding-left: 150px;
+  
+  
+        .tour-info {
+        
+  
+          .tour-info-title {
+            
+          }
+  
+          .tour-info-text {
+           width: 300px;
+          }
+  
+          .button-tour {
+  
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    .container-main {
+      flex-direction: column;
+      justify-content: center;
+      padding-bottom: 80px;
+      padding-top: 50px;
+  
+      .footer-adress-block {
+        order: 2;
+        .footer-adress {
+   text-align: center;
+   margin-bottom: 15px;
+        }
+        .footer-working-mode{
+          text-align: center;
+        }
+      }
+  
+      .footer-logo-block {
+        order: 1;
+        .social {
+          margin-bottom: 50px;
+          margin-top: 45px;
+        
+        }
+      }
+      .phone-block{
+        order: 3;
+        margin-top: 49px;
+      }
+      }
+  }
+
+  .pop-up-my{
+   .pop-up-tour{
+       padding: 20px 30px;
+     .pop-up-form{
+        align-items: center;
+       .pop-up-text{
+        font-size: 16px;
+        line-height: 18px;
+        margin-right: 0;
+        max-width: 290px;
+       }
+     .consultation-order-form {
+        margin-right: 0;
+   
+       .consultation-order-input {
+         .form-control {
+          width: 290px;
+          height: 50px;
+
+           &::placeholder {
+            font-size: 16px;
+           }
+            }
+   
+         .invalid-feedback {
+          font-size: 10px;
+         }
+       }
+   
+       .button-consultation-order {
+          width: 290px;
+       }
+   
+       .consultation-order-check {
+           .form-check-label {
+            font-size: 14px;
+         }
+       }
+     }
+   }
+   }
+   }
+
+
+
+
+
+}
+@media screen and (max-width: 424px) {
+ .button{
+    height: 50px;
+    font-size: 16px;
+    &.transparent{
+      font-size: 15px;
+    }
+  }
+
+  .title {
+    header {
+      .container-main {
+        padding: 28px 116px 31px 15px;
+        .phone-block{
+          display: none;
+        }
+      }
+    }
+
+    .container-main {
+      &.title-container {
+        .title-block {
+          .title-title {
+              font-size: 26px;
+              line-height: 32px;
+              margin-bottom: 15px;
+              margin-top: 147px;
+          }
+          .button-title {
+          margin-bottom: 0;
+          }
+
+          .title-text {
+            width: 275px;
+            font-size: 14px;
+            line-height: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  .projects {
+
+    .container-main {
+      padding: 80px 15px 45px 15px;
+      .projects-title {
+        font-size: 30px;
+        text-align: left;
+        margin-bottom: 0;
+      }
+      .project-block {
+        margin-bottom: 60px;
+        padding-top: 30px;
+        .project-image {
+          align-items: flex-start;
+          margin-left: 0;
+          margin-right: 0;
+          .project-info-title {
+            font-size: 18px;
+            text-align: left;
+          }
+          .project-image-img {
+         width: 100%;
+          }
+        }
+        .project-info {
+          .project-info-text {
+            text-align: left;
+            width: 280px;
+            font-size: 14px;
+          }
+          .project-info-details {
+            width: 290px;
+            .project-info-detail {
+              width: 85px;
+              height: 85px;
+
+              span {
+                font-size: 15px;
+              }
+            }
+          }
+
+          .button-project-info {
+            width: 290px;
+          }
+        }
+      }
+
+      .project-link-block {
+        .project-link{
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  .technology {
+    .container-main {
+      .technology-title {
+        font-size: 30px;
+        margin-bottom: 42px;
+      }
+
+      .technology-image-block {
+
+        .tehnology-image {
+
+        }
+
+        .technology-image-indicator {
+
+        }
+
+        .technology-info {
+          .technology-info-title {
+
+          }
+
+          .technology-info-text {
+
+          }
+
+          &.block1 {
+
+            max-width: 240px;
+
+          }
+
+          &.block2 {
+            top: 140px;
+            left: 815px;
+          }
+
+          &.block3 {
+            top: 342px;
+            left: 820px;
+
+          }
+
+          &.block4 {
+
+            top: 512px;
+            left: 560px;
+          }
+
+          &.block5 {
+
+            top: 360px;
+            left: 50px;
+          }
+        }
+      }
+    }
+  }
+
+  .step {
+    .container-main {
+      padding-bottom: 20px;
+  
+      .step-title {
+        font-size: 30px;
+        margin-bottom: 50px;
+        line-height: 40px;
+      }
+        .steps-row {
+          .step-info {
+            .step-info-text-block {
+            margin-bottom: 50px;
+              .step-info-title {
+              font-size: 16px;
+            }
+              .step-info-text {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  .guarantees {
+    .container-main {
+      padding: 45px 15px 50px 15px;
+      .guarantees-title {
+        font-size: 30px;
+        line-height: 40px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      .guarantees-upper-blocks {
+        margin-bottom: 0;
+        .guarantees-upper-block {
+          width: 290px;
+          margin-right: 0;
+          margin-top: 20px;
+          padding: 20px 0 20px 20px;
+          .guarantees-upper-block-icon{
+            width: 35px;
+            margin-right: 20px;
+          }
+          &.insurance{
+            .guarantees-upper-block-icon{
+              width: 29px;
+              margin-right: 20px;
+            }
+          }  
+          
+          .guarantees-upper-block-info {
+            .guarantees-upper-block-title {
+              font-size: 16px;
+            }
+
+            .guarantees-upper-block-text {
+              font-size: 14px;
+              padding-right: 5px;
+              line-height: 19px;
+            }
+          }
+        }
+      }
+
+      .guarantees-items {
+        justify-content: center;
+        margin-bottom: 50px;
+        .guarantees-item {
+          margin-top: 37px;
+          margin-right: 0;
+          &.people{
+            order: 1;
+          }
+          &.coin{
+            order: 3;
+          }
+          &.write{
+            order: 2;
+          }
+          .guarantees-item-icon {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 30px;
+            img{
+              width: 50%;
+            }
+          }
+          .guarantees-item-title {
+            font-size: 16px;
+          }
+          .guarantees-item-text {
+            font-size: 16px;
+            line-height: 21px;
+          }
+        }
+      }
+      .guarantees-button-block {
+        margin-top: 13px;
+        .button {
+          width: 290px;
+         
+          &.transparent{
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  .consultation {
+    .container-main {
+      padding: 50px 15px 0 15px;
+      .consultation-image {
+        display: none;
+      }
+      .consultation-order {
+        .consultation-order-title {
+          font-size: 30px;
+          line-height: 40px;
+          margin-bottom: 13px;
+        }
+        .consultation-order-form {
+          justify-content: center;
+          .consultation-order-input {
+            .form-control {
+              width: 290px;
+              height: 50px;
+              font-size: 16px;
+              &::placeholder {
+                font-size: 16px;
+              }
+            }
+            .invalid-feedback {
+              font-size: 10px;
+            }
+          }
+          .button-consultation-order {
+              width: 290px;
+          }
+          .consultation-order-check {
+      
+            .form-check-label {
+              font-size: 14px;
+              line-height: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .tour {
+
+
+    .container-main {
+       padding-bottom: 90px;
+  
+      .tour-map {
+        padding-right: 150px;
+        padding-left: 150px;
+  
+  
+        .tour-info {
+        
+  
+          .tour-info-title {
+            font-size: 30px;
+            line-height: 40px;
+            margin-top: 90px;
+            width: 290px;
+            margin-bottom: 30px;
+          }
+  
+          .tour-info-text {
+           width: 290px;
+           font-size: 16px;
+           line-height: 21px;
+           margin-bottom: 30px;
+          }
+  
+          .button-tour {
+            width: 290px;
+          }
+        }
+      }
+    }
+  }
+
+
+
 
 
 }

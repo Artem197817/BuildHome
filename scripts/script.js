@@ -20,70 +20,109 @@ $(document).ready(function () {
         },
     });
 
-    const form = document.querySelector('.consultation-order-form');
+    const forms = document.querySelectorAll('.consultation-order-form');
 
-    form.addEventListener('submit', function (event) {
-
-        form.classList.remove('was-validated');
-
-        event.preventDefault();
-        event.stopPropagation();
-
-        form.classList.add('was-validated');
-
-        $('.consultation-order-form input').each(function () {
-
-            if (!this.checkValidity()) {
-                $(this).addClass('is-invalid');
-                $(this).next().css({
-                    display: 'block'
-                })
-            } else {
-                $(this).removeClass('is-invalid');
-                $(this).next().css({
-                    display: 'none'
-                })
-            }
-        });
-        //  const loader = $('.loader-container');
-
-        if (form.checkValidity()) {
-            form.classList.remove('was-validated');
-
-            let name = $('#inputName').val();
-            let phone = $('#phone').val();
-
-            // loader.css('display', 'flex');
-            $.ajax({
-                url: 'https://testologia.ru/checkout',
-                type: 'POST',
-                data: {
-                    name: name,
-                    phone: phone
-                },
-
-                success: function (response) {
-                    if (response.success === 1) {
-                        // successInfo('Спасибо за Ваш заказ. Мы скоро свяжемся с Вами!', form)
-                    } else {
-                        // successInfo('Возникла ошибка при оформлении заказа, позвоните нам и сделайте заказ', form)
-                    }
-                    // loader.hide();
-                },
-                error: function (xhr, status, error) {
-                    console.error('Произошла ошибка:', error);
+    forms.forEach(form => {
+        form.addEventListener('submit', function (event) {
+            this.classList.remove('was-validated');
+            event.preventDefault();
+            event.stopPropagation();
+            this.classList.add('was-validated');
+    
+            // Валидация инпутов внутри текущей формы
+            $(this).find('input').each(function () {
+                if (!this.checkValidity()) {
+                    $(this).addClass('is-invalid');
+                    $(this).next().css({ display: 'block' });
+                } else {
+                    $(this).removeClass('is-invalid');
+                    $(this).next().css({ display: 'none' });
                 }
             });
-        }
+    
+            // Проверка валидности всей формы
+            if (this.checkValidity()) {
+                this.classList.remove('was-validated');
+    
+                let name = $('[name="name"]', this).val();
+                let phone = $('[name="phone"]', this).val();
+    
+                // Отправка данных формы
+                $.ajax({
+                    url: 'https://testologia.ru/checkout',
+                    type: 'POST',
+                    data: {
+                        name: name,
+                        phone: phone
+                    },
+                    success: function (response) {
+                        if (response.success === 1) {
+                           successInfo('Спасибо, мы свяжемся с вами в ближайшее время!', form);
+                        } else {
+                           successInfo('Возникла ошибка при оформлении, позвоните нам и запишитесь', form);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('Произошла ошибка:', error);
+                    }
+                
+                });
+            }
+        });
     });
 
+    let popUp = $('.pop-up-my');
+    let popUpForm;
+    let popUpMessage;
+    let popUpMsg;
 
     function successInfo(message, form) {
-
-        $('.order-info-form').css('display', 'none');
-        $('.order-success-info').css('display', 'flex').text(message);
+        if(form.id === 'consultation-form'){
+             popUpForm =$('#consultation-form');
+             popUpMessage=$('.consultation-order-message');
+             popUpMsg=$('#consultation-message')
+        }else{
+            popUpForm =$('#pop-up-form');
+             popUpMessage=$('.pop-up-message');
+              popUpMsg = $('#pop-up-msg')
+        }
+        popUpForm.css({ display: 'none' });
+        popUpMessage.css({ display: 'flex' });
+        popUpMsg.text(message);
         form.reset();
+       
+        
     }
+   
 
+    $('#button-tour').click((e)=>{
+        popUp.css('display', 'flex');
+        console.log(popUp)
+        console.log( $('#button-tour'))
+        $('#pop-up-msg').css('display', 'flex');
+    });
+
+    $('.close-pop').click(() => {
+        popUp.css({ display: 'none' });
+        popUpForm.css({ display: 'flex' });
+        popUpMessage.css({ display: 'none' });
+        
+        
+    });
+
+    $(window).click((e) => {
+        if ($(e.target).is(popUp)) {
+            popUp.css({ display: 'none' });
+            popUpForm.css({ display: 'flex' });
+            popUpMessage.css({ display: 'none' });
+        }
+    }); 
+
+    $('.close-order').click(() => {
+        $('#consultation-form').css({ display: 'flex' });
+        $('.consultation-order-message').css({ display: 'none' });
+        
+        
+    });
 
 });

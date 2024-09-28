@@ -286,31 +286,31 @@
                         До 0.1 % от суммы за каждый день просрочки</p>
                 </div>
             </div>
-            <div class="guarantees-upper-block">
+            <div class="guarantees-upper-block insurance">
                 <img src="images/insurance.png" alt="insurance" class="guarantees-upper-block-icon">
                 <div class="guarantees-upper-block-info">
                     <h3 class="guarantees-upper-block-title">Страховка</h3>
-                    <p class="guarantees-upper-block-text">Гарантия 10 лет. Страховка дома. Обработка<br> дома.
+                    <p class="guarantees-upper-block-text">Гарантия 10 лет. Страховка дома. Обработка дома.
                         Сервисное обслуживание</p>
                 </div>
             </div>
         </div>
         <div class="guarantees-items">
-            <div class="guarantees-item">
+            <div class="guarantees-item write">
                 <div class="guarantees-item-icon">
                     <img src="images/writing.png" alt="writing" class="guarantees-item-img">
                 </div>
                 <h3 class="guarantees-item-title">Гарантия фиксированной сметы</h3>
                 <p class="guarantees-item-text">Все непредсказуемые расходы компенсируем за свой счет</p>
             </div>
-            <div class="guarantees-item">
+            <div class="guarantees-item people">
                 <div class="guarantees-item-icon">
                     <img src="images/people.png" alt="writing" class="guarantees-item-img">
                 </div>
                 <h3 class="guarantees-item-title">Без посредников</h3>
                 <p class="guarantees-item-text">Мы сами выполняем все работы и несем за них ответственность</p>
             </div>
-            <div class="guarantees-item">
+            <div class="guarantees-item coin">
                 <div class="guarantees-item-icon">
                     <img src="images/coin.png" alt="writing" class="guarantees-item-img">
                 </div>
@@ -332,7 +332,12 @@
         <div class="consultation-order">
             <h2 class="consultation-order-title">Получите индивидуальную
                 консультацию</h2>
-            <form action="#" class="consultation-order-form  needs-validation" novalidate>
+                <div class="consultation-order-message">
+                    <div class="close-order">
+                        <img src="images/close-pop.png" alt="close" class="close-img">
+                    </div>
+                    <span id="consultation-message"></span></div>
+            <form action="#" class="consultation-order-form  needs-validation" novalidate id="consultation-form">
                 <div class="consultation-order-input">
                     <input type="text" class="form-control" id="inputName" name="name" placeholder="Ваше имя" required>
                     <div class="invalid-feedback">Введите ваше имя.</div>
@@ -360,10 +365,9 @@
     <div class="container-main">
         <div class="tour-map">
             <div class="tour-info">
-                <h2 class="tour-info-title">Запишитесь
-                    на экскурсию</h2>
+                <h2 class="tour-info-title">Запишитесь на экскурсию</h2>
                 <div class="tour-info-text">В готовые дома, чтобы лично убедиться в качестве нашей работы</div>
-                <button class="button button-tour">Записаться</button>
+                <button  type="button"  class="button button-tour" id="button-tour">Записаться</button>
             </div>
         </div>
     </div>
@@ -404,6 +408,42 @@
     </div>
 
 </footer>
+
+<div class="pop-up-my">
+    <div class="pop-up-tour">
+        <div class="close-pop">
+            <img src="images/close-pop.png" alt="close" class="close-img">
+        </div>
+        <div class="pop-up-form" id="pop-up-form">
+            <div class="pop-up-text">Пожалуйста, оставьте свои данные, чтобы мы могли
+            связаться с вами и уточнить детали предстоящей экскурсии
+            </div>
+            <form action="#" class="consultation-order-form  needs-validation" novalidate >
+                <div class="consultation-order-input">
+                    <input type="text" class="form-control" id="inputName" name="name" placeholder="Ваше имя" required>
+                    <div class="invalid-feedback">Введите ваше имя.</div>
+                </div>
+                <div class="consultation-order-input">
+                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Ваш телефон"
+                           required>
+                    <div class="invalid-feedback">Введите ваш телефон</div>
+                </div>
+                <button type="submit" class="button button-consultation-order btn ">Записаться</button>
+                <div class="consultation-order-check">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Нажимая на кнопку, я даю согласие на обработку персональных данных и соглашаюсь с
+                        <a href="#" class="politics-link">политикой конфиденциальности</a>
+                    </label>
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked required>
+                    <div class="invalid-feedback">Ознакомьтесь и согласитесь с политикой конфиденциальности</div>
+                </div>
+            </form>
+        </div>
+        <div class="pop-up-message"><span id="pop-up-msg"></span></div>
+    </div>
+</div>
+ 
+
 
 
 <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
