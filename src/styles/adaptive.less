@@ -380,20 +380,20 @@
           }
 
           &.block2 {
-            left: 600px;
+            left: 82%;
           }
 
           &.block3 {
-            left: 620px;
+            left: 80%;
           }
 
           &.block4 {
-            left: 380px;
+            left: 50%;
           }
 
           &.block5 {
             top: 360px;
-            left: 50px;
+            left: 30px;
           }
         }
       }
@@ -509,10 +509,92 @@
 
   .technology {
     .container-main {
-      padding: 45px 15px 200px 15px;
+      padding: 45px 15px 216px 15px;
       .technology-image-block {
-
-        flex-direction: column;
+          display: none;
+        &.min{
+          display: flex;
+          flex-direction: column;
+        
+        
+        .technology-dot{
+          cursor: pointer;
+          box-sizing: border-box;
+          .circle1{
+            border: 1px solid @title-color;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .circle2{
+              width: 15px;
+              height: 15px;
+              background-color: @title-color;
+              border-radius: 50%;
+              
+            }
+          }
+          
+          &:hover{
+            .circle1{
+              border-color: @dot-hover;
+            }
+            .circle2{
+                box-shadow: 0px 0px 25.5px 4.5px rgba(0, 0, 0, 0.004);
+               background-color: @dot-hover;
+            }
+         
+          }
+          &.dot1{
+            position: absolute;
+            top: 18.5%;
+            left: 18.5%;
+          }
+          &.dot2{
+            position: absolute;
+            top: 24.5%;
+            left: 80.5%;
+          }
+          &.dot3{
+            position: absolute;
+            top: 51%;
+            left: 63%;
+          }
+          &.dot4{
+            position: absolute;
+            top: 85%;
+            left: 35%;
+          }
+          &.dot5{
+            position: absolute;
+            top: 58%;
+            left: 13%;
+          }
+        } 
+        .technology-info-arrow{
+          display: none;
+          width: 290px;
+          padding: 20px 15px;
+          position: absolute;
+          background: @bakground-small-block-color;
+          border-radius: 3px;
+          top: 104%;
+        
+        &::before {
+          content: ""; 
+          border: solid transparent;
+          position: absolute;    
+          left: 103px;    
+          bottom: 100%;
+          border-bottom-color: @bakground-small-block-color;
+          border-width: 9px;
+          margin-left: 0;
+        }
+      }
+    }
 
         .tehnology-image {
           width: 100%;
@@ -524,9 +606,12 @@
 
         .technology-info {
 
+        .technology-info-text{
+          margin-bottom: 0;
+        }  
+
           &.block1 {
-            position: relative;
-            left: 0;
+           display: none;
           }
 
           &.block2 {
@@ -546,6 +631,7 @@
             display: none;
           }
         }
+        
       }
     }
   }
@@ -1009,7 +1095,211 @@
     }
   }
 
+  .gallery {
+    .container-main {
+      .gallery-title {
+       font-size: 30px;
+       line-height: 40px;
+       width: 291px;
+       font-weight: 300;
+      }
+    }
+  }
+}
 
+  @media screen and (max-width: 340px) {
+
+  .gallery {
+  
+    .container-main {
+
+  
+      .gallery-title {
+
+      }
+  
+    
+
+      .swiper {
+
+        .flex-center-center();
+  
+        .swiper-pagination-bullet {
+          
+        }
+  
+        .swiper-button-next, .swiper-button-prev {
+          display: none;
+        }
+  
+        .swiper-button-next::after, .swiper-button-prev::after {
+          display: none;
+        }
+  
+        .swiper-wrapper {
+          margin-right: 38%;
+          .swiper-slide {
+  
+            &.swiper-slide-active {
+  
+  
+              img {
+      
+              }
+  
+              .slide-content {
+                .slide-info {
+           
+                }
+              }
+            }
+  
+            &.swiper-slide-prev {
+
+              img {
+          
+              }
+  
+              .slide-content {
+                .slide-info {
+           
+                }
+              }
+            }
+  
+            &.swiper-slide-next {
+
+  
+              img {
+          
+              }
+            }
+  
+            img {
+    
+            }
+  
+            .slide-content {
+
+              img{
+            
+      
+              }
+  
+              .slide-info {
+                  margin-left: 23%;
+                .slide-info-left {
+               
+           
+                  span {
+               
+                  }
+                }
+  
+                .slide-info-line {
+                   
+                }
+  
+                .slide-info-right {
+           
+                  .slide-info-right-gab{
+                  .gab-main{
+                  }
+                  .gab{
+              
+                  }
+                }
+                .slide-info-right-sqr{
+            
+                  .info {
+          
+                    
+                  }
+                  .sqr{
+          
+                  }
+                }
+                }
+              }
+  
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+}
+
+@media screen and (max-width: 572px) {
+  .gallery {
+      .container-main {
+        padding-bottom: 45px;
+        .gallery-title {
+          margin-bottom: 10px;
+        }
+    
+      .swiper {
+        height: 500px;
+        .swiper-wrapper {
+          .swiper-slide {
+             .slide-content {
+              img{
+                height: 300px;
+                    }
+  
+              .slide-info {
+                justify-content: center;
+                align-items: flex-start;
+                padding: 15px 14px 15px 15px;
+                .slide-info-left {
+                  font-size: 14px;
+                  margin-left: 0;
+           
+                  span {
+                    line-height: 18px;
+                    font-size: 14px;
+                    max-width: 155px;
+                    margin-top: 15px;
+                  }
+                }
+  
+                .slide-info-line {
+                   
+                }
+  
+                .slide-info-right {
+                  margin-left: 22px;
+                  font-size: 14px;
+                  margin-right: 0;
+                  .slide-info-right-gab{
+                  .gab-main{
+                    font-size:  14px;
+                  }
+                  .gab{
+                    display: none;
+                  }
+                }
+                .slide-info-right-sqr{
+                  margin-top: 15px;
+                  .info {
+                    font-size: 14px;
+                    
+                  }
+                  .sqr{
+                    display: none;
+                  }
+                }
+                }
+              }
+              }
+          }
+        }
+      }
+    }
+  }
+  
 
 
 

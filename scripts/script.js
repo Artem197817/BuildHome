@@ -1,3 +1,5 @@
+
+
 $(document).ready(function () {
     new WOW({
         animateClass: 'animate__animated',
@@ -44,8 +46,8 @@ $(document).ready(function () {
             if (this.checkValidity()) {
                 this.classList.remove('was-validated');
     
-                let name = $('[name="name"]', this).val();
-                let phone = $('[name="phone"]', this).val();
+                let name = $('#inputName', this).val();
+                let phone = $('#phone', this).val();
     
                 // Отправка данных формы
                 $.ajax({
@@ -124,5 +126,71 @@ $(document).ready(function () {
         
         
     });
+
+    const technologyInfoArrow = $('.technology-info-arrow')
+
+    $('.technology-dot').on('click', function() {
+        const classes = $(this).attr('class'); 
+
+        let title;
+        let text;
+
+        switch (true) { 
+            case classes.includes('dot1'):
+                title ='Неразрывний каркас'
+                text = 'Монтаж стен этажей внутри дома и по всему периметру выполняется единым массивом.'
+                break;
+
+            case classes.includes('dot2'):
+                title ='5 камерные окна'
+                 text = 'Обеспечивает исключительную сохранность тепла в доме'
+                break;
+
+            case classes.includes('dot3'):
+                title ='Плитная ветрозащита'
+                text = 'Используемая влагостойкая ветрозащитная плита обеспечивает дополнительную шумоизоляцию стен'
+                break;
+
+             case classes.includes('dot4'):
+                title ='Сборка силовых узлов'
+                text = 'Основные силовые узлы наших домов оцинкованы, что позволяет быть уверенными в исключительной прочности и долговечности конструкции'
+                break
+
+             case classes.includes('dot5'):
+                title ='Диагональный раскос'
+                text = 'Система диагональных раскосов позволяет создать оптимальный вентиляционный зазор для капитальных стен и наружной отделки'
+                break;
+    
+            default:
+                console.log('No matching class found');
+              
+        }
+        technologyInfoArrow.css();
+        $('.technology-info-title.min').text(title);
+        $('.technology-info-text.min').text(text);
+
+    });
+
+    $(window).click((e) => {
+        if ($(e.target).is(technologyInfoArrow)) {
+            technologyInfoArrow.css({ display: 'none' });
+        }
+    }); 
+
+    let menu = $('.menu-pop-up');
+
+    $('.menu').click(()=>{
+        menu.css('display', 'block');
+    });
+
+    $('.close-menu').click(()=>{
+        menu.css('display', 'none');
+    })
+
+    $(window).click((e) => {
+        if ($(e.target).is(menu)) {
+            menu.css({ display: 'none' });
+        }
+    }); 
 
 });

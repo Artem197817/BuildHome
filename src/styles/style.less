@@ -13,6 +13,7 @@
 @button-gradient2: #efdbbb;
 @header-border-color: #363D51;
 @project-link-color: #89898a;
+@dot-hover: rgb(252, 237, 203);
 @background-main-opacity: rgba(37, 37, 45, 0.8);
 
 :root {
@@ -146,6 +147,23 @@ body {
     }
   }
 }
+.social{
+  .instagram{
+    &:hover{
+      opacity: 0.1;
+    }
+  }
+  .telegram{
+    &:hover{
+      opacity: 0.1;
+    }
+  }
+  .youtube{
+    &:hover{
+      opacity: 0.1;
+    }
+  }
+}
 
 
 .title {
@@ -153,6 +171,64 @@ body {
   background-position: center;
   background-size: cover;
   position: relative;
+
+.menu-pop-up{
+  display: none;
+  height: 100%;
+  padding-left: 18.8%;
+  padding-right: 106px;
+  padding-top: 35px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: @background-main-color;
+  z-index: 200;
+  .close-menu{
+    margin-bottom: 51px;
+  }
+  .menu-title-title{
+    font-family: "Neumann", sans-serif;
+    font-size: 40px;
+    color: @text-color;
+    margin-bottom: 60px;
+    line-height: 15px;
+  }
+  ul{
+    list-style: none;
+    padding-left: 0;
+    .menu-item{
+      display: flex;
+      text-decoration: none;
+      color: @text-color;
+      
+      a{
+        margin-bottom: 31px;
+        font-size: 18px;
+        line-height: 15px;
+      &:hover{
+        color: @title-color;
+  
+      }
+      &:hover::before{
+        content: ''; 
+        position: relative;
+        left: -10px;
+        top: 5px;
+        width: 5px; 
+        height: 5px; 
+        background-color: @title-color;
+        border-radius: 50%; 
+      }
+      }
+    }
+  }
+  .social{
+    box-sizing: border-box;
+    width: 150px;
+    .flex-center-between();
+  }
+}
+
 
   .title-bottom-shadow {
     background-image: -moz-linear-gradient(90deg, @background-main-color 0%, @background-main-gradient 100%);
@@ -362,7 +438,9 @@ body {
     .technology-image-block {
       .flex-center-center();
       position: relative;
-
+      &.min{
+        display: none;
+      }
       .tehnology-image {
 
       }
@@ -594,12 +672,13 @@ body {
                 display: flex;
                 flex-direction: column;
                 .small-block-css();
-
+                font-weight: 500;
                 margin-left: 42px;
 
                 span {
                   margin-top: 15px;
                   font-size: 16px;
+                  font-weight: 100;
                 }
               }
 
@@ -611,14 +690,28 @@ body {
               .slide-info-right {
                 display: flex;
                 flex-direction: column;
-                color: @text-color;
-                font-size: 16px;
-
                 margin-right: 25px;
-
-                span {
+                .slide-info-right-gab{
+                  display: flex;
+                .gab-main{
+                  display: flex;
+                  color: @text-color;
+                  font-size: 16px;
+                }
+                  .gab{
+                    margin-bottom: 15px;
+                    margin-right: 2px;
+                  }
+                  }
+                  .slide-info-right-sqr{
+                .info{
                   margin-top: 15px;
                 }
+                  .sqr{
+                    margin-right: 2px;
+                  }
+                
+              }
               }
             }
 
