@@ -193,4 +193,60 @@ $(document).ready(function () {
         }
     }); 
 
+    function updateLeftPosition() {
+        const fixedElement = document.querySelector('.my-arrow-down');
+        const containerWidth = document.querySelector('body').clientWidth;
+
+        let leftPosition;
+
+        if (containerWidth >= 1920) {
+            leftPosition = 305; 
+        } else if (containerWidth <= 1200) {
+            leftPosition = -55; 
+        } else {
+            leftPosition = (containerWidth - 1200) / 2 - 70;
+        }
+
+        fixedElement.style.left = `${leftPosition}px`;
+    }
+    
+    window.addEventListener('load', updateLeftPosition);
+    window.addEventListener('resize', updateLeftPosition);
+
+    window.addEventListener('scroll', () => {
+
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+            consultationPopUp.css({ display: 'flex' });
+        }
+    });
+
+    const consultationPopUp = $('.consultation-pop-up')
+
+    $('.consultation-pop-up-link').click(() => {
+
+        consultationPopUp.css({ display: 'none' });
+
+    });
+
+    $(window).click((e) => {
+        if ($(e.target).is(consultationPopUp)) {
+           consultationPopUp.css({ display: 'none' });
+        }
+    });
+
+    $('.project-image-link').magnificPopup({
+        type: 'image',
+        closeOnContentClick: true,
+        mainClass: 'mfp-with-zoom',
+        zoom: {
+            enabled: true,
+            duration: 500,
+            easing: 'ease-in-out',
+
+        }
+    });
+    $('.project-link-block').click(()=>{
+        $('.more').css({ display: 'flex' });
+    });
+
 });
