@@ -9,7 +9,7 @@ $(document).ready(function () {
         spaceBetween: 0,
         freeMode: true,
         centeredSlides: true,
-
+        initialSlide: 2,
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -46,8 +46,8 @@ $(document).ready(function () {
             if (this.checkValidity()) {
                 this.classList.remove('was-validated');
 
-                let name = $('#inputName', this).val();
-                let phone = $('#phone', this).val();
+                let name = $('.name', this).val();
+                let phone = $('.phone', this).val();
 
                 // Отправка данных формы
                 $.ajax({
@@ -129,6 +129,7 @@ $(document).ready(function () {
 
     const technologyInfoArrow = $('.technology-info-arrow')
 
+
     $('.technology-dot').on('click', function () {
         const classes = $(this).attr('class');
 
@@ -165,7 +166,8 @@ $(document).ready(function () {
                 console.log('No matching class found');
 
         }
-        technologyInfoArrow.css();
+
+        technologyInfoArrow.css({display: 'flex'});
         $('.technology-info-title.min').text(title);
         $('.technology-info-text.min').text(text);
 
@@ -213,24 +215,28 @@ $(document).ready(function () {
     window.addEventListener('load', updateLeftPosition);
     window.addEventListener('resize', updateLeftPosition);
 
+    let countPopUpActivate = 0;
     window.addEventListener('scroll', () => {
 
-        if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight && countPopUpActivate < 2) {
             consultationPopUp.css({display: 'flex'});
         }
     });
 
     const consultationPopUp = $('.consultation-pop-up')
 
+
     $('.consultation-pop-up-link').click(() => {
 
         consultationPopUp.css({display: 'none'});
+        countPopUpActivate++
 
     });
 
     $(window).click((e) => {
         if ($(e.target).is(consultationPopUp)) {
             consultationPopUp.css({display: 'none'});
+            countPopUpActivate++
         }
     });
 
@@ -242,11 +248,17 @@ $(document).ready(function () {
             enabled: true,
             duration: 500,
             easing: 'ease-in-out',
-
+        },
+        callbacks: {
+            beforeOpen: function () {
+                this.st.zoom.duration = 300;
+            }
         }
     });
     $('.project-link-block').click(() => {
         $('.more').css({display: 'flex'});
     });
+
+    $('.phone').mask('+380 (99) 999-99-99');
 
 });
